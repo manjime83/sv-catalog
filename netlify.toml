@@ -1,9 +1,6 @@
 [build]
-  publish = "public"
   command = "npm run build"
-[build.environment]
-  NODE_VERSION = "18.16.0"
-  YARN_VERSION = "1.22.19"
-  YARN_FLAGS = "--no-ignore-optional"
+  publish = ".next"
 
-
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
