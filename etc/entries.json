@@ -1,0 +1,264 @@
+{
+  "sys": {
+    "type": "Array"
+  },
+  "total": 2,
+  "skip": 0,
+  "limit": 100,
+  "items": [
+    {
+      "metadata": {
+        "tags": []
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "991dlmvbopqc"
+          }
+        },
+        "id": "7EfO4zsiDPkPdphgLjdlJE",
+        "type": "Entry",
+        "createdAt": "2023-06-06T20:19:17.900Z",
+        "updatedAt": "2023-06-06T20:19:17.900Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "category"
+          }
+        },
+        "locale": "es-US"
+      },
+      "fields": {
+        "name": "Short Term Rental",
+        "slug": "short-term-rental",
+        "image": {
+          "metadata": {
+            "tags": []
+          },
+          "sys": {
+            "space": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Space",
+                "id": "991dlmvbopqc"
+              }
+            },
+            "id": "2IlZkR59Vz6HbUwDgRtszc",
+            "type": "Asset",
+            "createdAt": "2023-06-02T22:55:31.853Z",
+            "updatedAt": "2023-06-02T22:55:31.853Z",
+            "environment": {
+              "sys": {
+                "id": "master",
+                "type": "Link",
+                "linkType": "Environment"
+              }
+            },
+            "revision": 1,
+            "locale": "es-US"
+          },
+          "fields": {
+            "title": "Freedom1",
+            "description": "",
+            "file": {
+              "url": "//images.ctfassets.net/991dlmvbopqc/2IlZkR59Vz6HbUwDgRtszc/c6a1e3f405ed0f8407f9b28e5941ced3/OLH_1956_Pic_Freedom_NextGenLivingRoom2_Matterport_F1.jpg",
+              "details": {
+                "size": 253567,
+                "image": {
+                  "width": 2100,
+                  "height": 1181
+                }
+              },
+              "fileName": "OLH_1956_Pic_Freedom_NextGenLivingRoom2_Matterport_F1.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      }
+    },
+    {
+      "metadata": {
+        "tags": []
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "991dlmvbopqc"
+          }
+        },
+        "id": "4NvpOqytRUYWwNq2COS8qo",
+        "type": "Entry",
+        "createdAt": "2023-06-06T20:02:08.547Z",
+        "updatedAt": "2023-06-06T20:02:08.547Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 1,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "category"
+          }
+        },
+        "locale": "es-US"
+      },
+      "fields": {
+        "name": "Residential",
+        "slug": "residential",
+        "image": {
+          "metadata": {
+            "tags": []
+          },
+          "sys": {
+            "space": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Space",
+                "id": "991dlmvbopqc"
+              }
+            },
+            "id": "7c2EnfBapCTccgwtuQ8Itq",
+            "type": "Asset",
+            "createdAt": "2023-05-31T13:51:55.483Z",
+            "updatedAt": "2023-05-31T13:51:55.483Z",
+            "environment": {
+              "sys": {
+                "id": "master",
+                "type": "Link",
+                "linkType": "Environment"
+              }
+            },
+            "revision": 1,
+            "locale": "es-US"
+          },
+          "fields": {
+            "title": "KnigthsBridge 1",
+            "description": "",
+            "file": {
+              "url": "//images.ctfassets.net/991dlmvbopqc/7c2EnfBapCTccgwtuQ8Itq/b54b343f25ecc8a69927296d88927b19/61571_eleK_lg.jpg",
+              "details": {
+                "size": 374707,
+                "image": {
+                  "width": 2100,
+                  "height": 1177
+                }
+              },
+              "fileName": "61571_eleK_lg.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        "description": "Donec non odio tempor, __maximus__ ex quis nec."
+      }
+    }
+  ],
+  "includes": {
+    "Asset": [
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "991dlmvbopqc"
+            }
+          },
+          "id": "2IlZkR59Vz6HbUwDgRtszc",
+          "type": "Asset",
+          "createdAt": "2023-06-02T22:55:31.853Z",
+          "updatedAt": "2023-06-02T22:55:31.853Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "locale": "es-US"
+        },
+        "fields": {
+          "title": "Freedom1",
+          "description": "",
+          "file": {
+            "url": "//images.ctfassets.net/991dlmvbopqc/2IlZkR59Vz6HbUwDgRtszc/c6a1e3f405ed0f8407f9b28e5941ced3/OLH_1956_Pic_Freedom_NextGenLivingRoom2_Matterport_F1.jpg",
+            "details": {
+              "size": 253567,
+              "image": {
+                "width": 2100,
+                "height": 1181
+              }
+            },
+            "fileName": "OLH_1956_Pic_Freedom_NextGenLivingRoom2_Matterport_F1.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "991dlmvbopqc"
+            }
+          },
+          "id": "7c2EnfBapCTccgwtuQ8Itq",
+          "type": "Asset",
+          "createdAt": "2023-05-31T13:51:55.483Z",
+          "updatedAt": "2023-05-31T13:51:55.483Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "locale": "es-US"
+        },
+        "fields": {
+          "title": "KnigthsBridge 1",
+          "description": "",
+          "file": {
+            "url": "//images.ctfassets.net/991dlmvbopqc/7c2EnfBapCTccgwtuQ8Itq/b54b343f25ecc8a69927296d88927b19/61571_eleK_lg.jpg",
+            "details": {
+              "size": 374707,
+              "image": {
+                "width": 2100,
+                "height": 1177
+              }
+            },
+            "fileName": "61571_eleK_lg.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    ]
+  }
+}
