@@ -8,7 +8,7 @@ export default async function Categories() {
   });
 
   return (
-    <div className="flex flex-wrap justify-center items-center gap-4 bg-gray-100 h-screen">
+    <div className="flex flex-wrap justify-center items-center gap-4 bg-gray-100 min-h-screen overflow-x-hidden">
       {categories.items.map((category) => (
         <CategoryCard key={category.sys.id} data={category} />
       ))}
