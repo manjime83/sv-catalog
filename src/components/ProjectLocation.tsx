@@ -13,13 +13,13 @@ export default function ProjectLocation({ location }: { location: { lat: number;
           lat: location.lat,
           lng: location.lon,
         }}
-        zoom={11}
-        options={{ disableDefaultUI: true, zoomControl: true }}
+        zoom={9}
+        options={{ disableDefaultUI: true, zoomControl: true, fullscreenControl: true }}
       >
         <Circle
           center={{ lat: location.lat, lng: location.lon }}
-          radius={3000}
-          options={{ strokeWeight: 0, fillColor: "#c850a0", fillOpacity: 0.3 }}
+          radius={5000}
+          options={{ strokeWeight: 0, fillColor: "#c850a0", fillOpacity: 0.4 }}
         />
       </GoogleMap>
     </LoadScriptNext>

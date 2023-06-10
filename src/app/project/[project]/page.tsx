@@ -16,8 +16,10 @@ export default async function Project({ params }: { params: { project: string } 
   const project = projects.items[0];
 
   return (
-    <div className="flex flex-wrap justify-center items-center gap-4 bg-gray-100 min-h-screen overflow-x-hidden">
-      <ProjectDetail data={project} />
+    <div className="bg-gray-100 min-h-screen overflow-x-hidden">
+      <div className="flex flex-wrap justify-center items-center gap-4 my-12">
+        <ProjectDetail data={project} />
+      </div>
     </div>
   );
 }

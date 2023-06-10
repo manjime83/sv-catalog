@@ -5,6 +5,7 @@ import { Entry } from "contentful";
 import { BathIcon, BedSingleIcon, CarIcon, HomeIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import ProjectEstimate from "./ProjectEstimate";
 import ProjectLocation from "./ProjectLocation";
 
 export default async function ProjectDetail({
@@ -27,13 +28,14 @@ export default async function ProjectDetail({
     taxRate,
     location,
     youTubeVideo,
+    virtualTour,
   } = data.fields;
 
   return (
-    <div className="card card-compact w-full max-w-screen-md bg-base-100 shadow-xl my-12">
-      <div className="card-body">
-        <div className="flex justify-between items-center">
-          <h1 className="card-title h-8">{name}</h1>
+    <div className="card card-compact w-full max-w-screen-md bg-base-100 shadow-xl">
+      <div className="card-body gap-8">
+        <div className="flex items-center justify-between">
+          <h1 className="card-title text-3xl font-bold">{name}</h1>
           <div
             className="tooltip"
             data-tip="Los precios y las características pueden variar y están sujetos a cambios."
@@ -48,7 +50,7 @@ export default async function ProjectDetail({
             </p>
           </div>
         </div>
-        <div className="flex flex-wrap gap-4 justify-center items-center my-2">
+        <div className="flex flex-wrap items-center justify-center gap-4">
           {images.map((image) => (
             <div className="" key={image!.sys.id}>
               <Image
@@ -61,8 +63,8 @@ export default async function ProjectDetail({
             </div>
           ))}
         </div>
-        <div className="flex flex-nowrap justify-around p-2 mx-20">
-          <div className="flex justify-center items-center space-x-2 w-30">
+        <div className="mx-20 flex flex-nowrap justify-around p-2">
+          <div className="min-w-30 flex items-center justify-center space-x-2">
             <HomeIcon />
             <span className="font-bold">
               {area.toLocaleString("en-US", {
@@ -71,25 +73,25 @@ export default async function ProjectDetail({
               ft<sup>2</sup>
             </span>
           </div>
-          <div className="flex justify-center items-center space-x-2 w-30">
+          <div className="min-w-30 flex items-center justify-center space-x-2">
             <BedSingleIcon />
             <span className="font-bold">{bedrooms}</span>
           </div>
-          <div className="flex justify-center items-center space-x-2 w-30">
+          <div className="min-w-30 flex items-center justify-center space-x-2">
             <BathIcon />
             <span className="font-bold">{bathrooms}</span>
           </div>
-          <div className="flex justify-center items-center space-x-2 w-30">
+          <div className="min-w-30 flex items-center justify-center space-x-2">
             <CarIcon />
             <span className="font-bold">{garages}</span>
           </div>
         </div>
         <div className="prose max-w-none">{documentToReactComponents(await richTextFromMarkdown(description))}</div>
-        <div className="flex justify-center items-center py-4">
-          <div className="basis-2/5 flex flex-col items-center gap-y-6 text-lg">
+        <div className="flex items-center justify-center py-4">
+          <div className="flex basis-2/5 flex-col items-center gap-y-6 text-lg">
             <div>
               <span>HOA aproximado: </span>
-              <strong className="badge badge-lg badge-primary badge-outline">
+              <strong className="badge badge-primary badge-outline badge-lg">
                 {hoa.toLocaleString("en-US", {
                   style: "currency",
                   currency: "USD",
@@ -99,7 +101,7 @@ export default async function ProjectDetail({
             </div>
             <div>
               <span>CDD aproximado: </span>
-              <strong className="badge badge-lg badge-primary badge-outline">
+              <strong className="badge badge-primary badge-outline badge-lg">
                 {cdd.toLocaleString("en-US", {
                   style: "currency",
                   currency: "USD",
@@ -109,7 +111,7 @@ export default async function ProjectDetail({
             </div>
             <div>
               <span>Impuesto aproximado: </span>
-              <strong className="badge badge-lg badge-primary badge-outline">
+              <strong className="badge badge-primary badge-outline badge-lg">
                 {taxRate.toLocaleString("en-US", {
                   maximumFractionDigits: 2,
                 })}
@@ -131,8 +133,22 @@ export default async function ProjectDetail({
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           />
         </div>
+        <div>
+          <h2 className="card-title h-8">Tour virtual</h2>
+          <iframe
+            width="100%"
+            height="414"
+            allowFullScreen
+            src={`${virtualTour}&mls=1&lang=es&title=0&search=0&play=1`}
+            allow="xr-spatial-tracking"
+          />
+        </div>
+        <div>
+          <h2 className="card-title h-8">Estima tu pago mensual</h2>
+          <ProjectEstimate price={priceFrom} taxRate={taxRate} fees={hoa + cdd / 12} />
+        </div>
         <div className="card-actions justify-end">
-          <Link href={`/project/${slug}`} className="btn btn-primary">
+          <Link href={`/project/${slug}`} className="btn-primary btn">
             Ver detalle
           </Link>
         </div>
