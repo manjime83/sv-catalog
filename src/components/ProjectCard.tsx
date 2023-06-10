@@ -31,7 +31,7 @@ export default async function Project({
         </div>
         <div className="h-20">{documentToReactComponents(await richTextFromMarkdown(shortDescription))}</div>
         <div className="card-actions justify-end">
-          <Link href={`/project/${slug}`} className="btn btn-primary">
+          <Link href={`/project/${slug}`} className="btn btn-primary grow">
             Ver detalle
           </Link>
         </div>

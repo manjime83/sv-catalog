@@ -21,7 +21,7 @@ export default async function Category({
         <h2 className="card-title">{name}</h2>
         <div className="h-20">{documentToReactComponents(await richTextFromMarkdown(description))}</div>
         <div className="card-actions justify-end">
-          <Link href={`/${slug}`} className="btn btn-primary">
+          <Link href={`/${slug}`} className="btn btn-primary grow">
             Ver {projects.length} propiedad{projects.length > 1 && "es"}
           </Link>
         </div>

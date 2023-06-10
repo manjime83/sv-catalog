@@ -7,5 +7,16 @@ module.exports = {
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
   daisyui: {
     logs: false,
+    themes: [
+      {
+        light: {
+          ...require("daisyui/src/theming/themes")["[data-theme=light]"],
+          primary: "#34d399",
+          ".btn-primary": {
+            color: "#1c1e27",
+          },
+        },
+      },
+    ],
   },
 };

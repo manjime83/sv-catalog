@@ -93,7 +93,7 @@ export default function ProjectEstimate({
             type="range"
             min={0}
             max={1000}
-            step={10}
+            step={1}
             value={interestRate}
             className="range range-secondary range-sm"
             onChange={(e) => setInterestRate(parseInt(e.target.value))}
@@ -118,7 +118,7 @@ export default function ProjectEstimate({
             type="range"
             min={0}
             max={200}
-            step={10}
+            step={1}
             value={taxRate}
             className="range range-secondary range-sm"
             onChange={(e) => setTaxRate(parseInt(e.target.value))}
@@ -143,7 +143,7 @@ export default function ProjectEstimate({
             type="range"
             min={0}
             max={200}
-            step={10}
+            step={1}
             value={insuranceRate}
             className="range range-secondary range-sm"
             onChange={(e) => setInsuranceRate(parseInt(e.target.value))}
