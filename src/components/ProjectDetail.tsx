@@ -76,24 +76,27 @@ export default async function ProjectDetail({
         </div>
         <div className="mx-20 flex flex-nowrap justify-around p-2">
           <div className="min-w-30 flex items-center justify-center space-x-2">
-            <HomeIcon />
+            <HomeIcon className="text-secondary" />
             <span className="font-bold">
               {area.toLocaleString("en-US", {
                 maximumFractionDigits: 2,
               })}
-              ft<sup>2</sup>
+              <span>
+                {" "}
+                ft<sup>2</sup>
+              </span>
             </span>
           </div>
           <div className="min-w-30 flex items-center justify-center space-x-2">
-            <BedSingleIcon />
+            <BedSingleIcon className="text-secondary" />
             <span className="font-bold">{bedrooms}</span>
           </div>
           <div className="min-w-30 flex items-center justify-center space-x-2">
-            <BathIcon />
+            <BathIcon className="text-secondary" />
             <span className="font-bold">{bathrooms}</span>
           </div>
           <div className="min-w-30 flex items-center justify-center space-x-2">
-            <CarIcon />
+            <CarIcon className="text-secondary" />
             <span className="font-bold">{garages}</span>
           </div>
         </div>
