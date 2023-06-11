@@ -14,7 +14,7 @@ export default async function Category({
 
   return (
     <div className="card card-compact w-96 bg-base-100 shadow-xl">
-      <figure className="relative w-96 h-[13.5rem]">
+      <figure className="relative w-96 aspect-video object-cover">
         <Image src={`https:${image!.fields.file!.url}`} alt={image!.fields.title!} width={640} height={360} />
       </figure>
       <div className="card-body">

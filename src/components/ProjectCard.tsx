@@ -15,7 +15,7 @@ export default async function Project({
 
   return (
     <div className="card card-compact w-96 bg-base-100 shadow-xl">
-      <figure className="relative w-96 h-[13.5rem]">
+      <figure className="relative w-96 aspect-video object-cover">
         <Image src={`https:${images[0]!.fields.file!.url}`} alt={images[0]!.fields.title!} fill />
       </figure>
       <div className="card-body">
