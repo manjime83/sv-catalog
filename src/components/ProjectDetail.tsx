@@ -67,17 +67,17 @@ export default async function ProjectDetail({
               <Image
                 src={`https:${image!.fields.file!.url}`}
                 alt={image!.fields.title!}
-                className="rounded-box"
+                className="rounded-box aspect-video object-cover"
                 width={352}
                 height={198}
               />
             </div>
           ))}
         </div>
-        <div className="mx-20 flex flex-nowrap justify-around p-2">
+        <div className="flex flex-nowrap justify-around p-2 md:mx-20">
           <div className="min-w-30 flex items-center justify-center space-x-2">
             <HomeIcon className="text-secondary" />
-            <span className="font-bold">
+            <span className="font-bold whitespace-nowrap">
               {area.toLocaleString("en-US", {
                 maximumFractionDigits: 2,
               })}
@@ -89,22 +89,24 @@ export default async function ProjectDetail({
           </div>
           <div className="min-w-30 flex items-center justify-center space-x-2">
             <BedSingleIcon className="text-secondary" />
-            <span className="font-bold">{bedrooms}</span>
+            <span className="font-bold whitespace-nowrap">{bedrooms}</span>
           </div>
           <div className="min-w-30 flex items-center justify-center space-x-2">
             <BathIcon className="text-secondary" />
-            <span className="font-bold">{bathrooms}</span>
+            <span className="font-bold whitespace-nowrap">{bathrooms}</span>
           </div>
           <div className="min-w-30 flex items-center justify-center space-x-2">
             <CarIcon className="text-secondary" />
-            <span className="font-bold">{garages}</span>
+            <span className="font-bold whitespace-nowrap">{garages}</span>
           </div>
         </div>
         <div className="prose max-w-none">{documentToReactComponents(await richTextFromMarkdown(description))}</div>
         <div className="flex items-center justify-center py-4">
           <div className="flex basis-2/5 flex-col items-center gap-y-6 text-lg">
-            <div>
-              <span>HOA aproximado: </span>
+            <div className="flex flex-col md:flex-row gap-2 items-center">
+              <div className="tooltip" data-tip="Valor aproximado">
+                <span>HOA</span>
+              </div>
               <strong className="badge badge-primary badge-outline badge-lg">
                 {hoa.toLocaleString("en-US", {
                   style: "currency",
@@ -113,8 +115,10 @@ export default async function ProjectDetail({
                 })}
               </strong>
             </div>
-            <div>
-              <span>CDD aproximado: </span>
+            <div className="flex flex-col md:flex-row gap-2 items-center">
+              <div className="tooltip" data-tip="Valor aproximado">
+                <span>CDD</span>{" "}
+              </div>
               <strong className="badge badge-primary badge-outline badge-lg">
                 {cdd.toLocaleString("en-US", {
                   style: "currency",
@@ -123,8 +127,10 @@ export default async function ProjectDetail({
                 })}
               </strong>
             </div>
-            <div>
-              <span>Impuesto aproximado: </span>
+            <div className="flex flex-col md:flex-row gap-2 items-center">
+              <div className="tooltip" data-tip="Valor aproximado">
+                <span>Impuesto</span>{" "}
+              </div>
               <strong className="badge badge-primary badge-outline badge-lg">
                 {taxRate.toLocaleString("en-US", {
                   maximumFractionDigits: 2,
@@ -141,20 +147,20 @@ export default async function ProjectDetail({
           <h2 className="card-title h-8">Video de la propiedad</h2>
           <iframe
             width="100%"
-            height="414"
             src={`https://www.youtube.com/embed/${new URL(youTubeVideo).searchParams.get("v")}`}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            className="aspect-video"
           />
         </div>
         <div>
           <h2 className="card-title h-8">Tour virtual</h2>
           <iframe
             width="100%"
-            height="414"
             allowFullScreen
             src={`${virtualTour}&mls=1&lang=es&title=0&search=0&play=1`}
             allow="xr-spatial-tracking"
+            className="aspect-video"
           />
         </div>
         <div>
@@ -203,7 +209,7 @@ export default async function ProjectDetail({
                 </strong>
               </div>
               <div className="h-2"></div>
-              <div className="flex justify-center items-center gap-2 space-x-4">
+              <div className="flex justify-center items-center gap-2 space-x-4 ">
                 <a
                   className="link link-primary"
                   href={`https://www.instagram.com/sandravargasrealtorfl`}
@@ -219,8 +225,8 @@ export default async function ProjectDetail({
                 </a>
               </div>
             </div>
-            <div className="divider divider-horizontal"></div>
-            <div className="flex justify-center items-center">
+            <div className="divider divider-horizontal hidden md:flex"></div>
+            <div className="md:flex md:justify-center md:items-center hidden">
               <Image
                 src="/channels4_profile.jpg"
                 alt="Sandra Vargas"
@@ -231,7 +237,7 @@ export default async function ProjectDetail({
             </div>
           </div>
         </div>
-        <div className="card-actions justify-end">
+        <div className="card-actions justify-end mt-4">
           <Link href="/" className="btn-primary btn grow">
             Ver más propiedades
           </Link>
