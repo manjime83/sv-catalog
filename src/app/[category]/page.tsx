@@ -16,12 +16,10 @@ export default async function Category({ params }: { params: { category: string 
   const category = categories.items[0];
 
   return (
-    <div className="bg-gray-100 min-h-screen overflow-x-hidden">
-      <div className="flex flex-wrap justify-center items-center gap-4 my-12">
-        {category.fields.projects.map((project) => (
-          <ProjectCard key={project!.sys.id} data={project!} />
-        ))}
-      </div>
+    <div className="flex flex-wrap justify-center items-center gap-4 my-12">
+      {category.fields.projects.map((project) => (
+        <ProjectCard key={project!.sys.id} data={project!} />
+      ))}
     </div>
   );
 }
