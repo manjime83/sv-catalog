@@ -99,7 +99,7 @@ export default async function ProjectDetail({
             </div>
             <div className="flex flex-col md:flex-row gap-2 items-center">
               <div className="tooltip" data-tip="Valor aproximado">
-                <span className="font-semibold">Impuesto estimado</span>
+                <span className="font-semibold">Impuesto</span>
               </div>
               <strong className="badge badge-primary badge-outline badge-lg">
                 {taxRate.toLocaleString("en-US", {
