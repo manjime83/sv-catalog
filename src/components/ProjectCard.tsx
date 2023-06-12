@@ -2,9 +2,9 @@ import { Locale, ProjectSkeleton } from "@/utils/contentful";
 import { richTextFromMarkdown } from "@contentful/rich-text-from-markdown";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Entry } from "contentful";
-import { BathIcon, BedSingleIcon, CarIcon, HomeIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import ProjectCharacteristics from "./ProjectCharacteristics";
 
 export default async function Project({
   data,
@@ -30,32 +30,7 @@ export default async function Project({
             +
           </p>
         </div>
-        <div className="flex flex-nowrap justify-around p-2">
-          <div className="min-w-30 flex items-center justify-center space-x-2">
-            <HomeIcon className="text-secondary whitespace-nowrap" />
-            <span className="font-bold">
-              {area.toLocaleString("en-US", {
-                maximumFractionDigits: 2,
-              })}
-              <span>
-                {" "}
-                ft<sup>2</sup>
-              </span>
-            </span>
-          </div>
-          <div className="min-w-30 flex items-center justify-center space-x-2">
-            <BedSingleIcon className="text-secondary" />
-            <span className="font-bold whitespace-nowrap">{bedrooms}</span>
-          </div>
-          <div className="min-w-30 flex items-center justify-center space-x-2">
-            <BathIcon className="text-secondary" />
-            <span className="font-bold whitespace-nowrap">{bathrooms}</span>
-          </div>
-          <div className="min-w-30 flex items-center justify-center space-x-2">
-            <CarIcon className="text-secondary" />
-            <span className="font-bold whitespace-nowrap">{garages}</span>
-          </div>
-        </div>
+        <ProjectCharacteristics data={{ area, bedrooms, bathrooms, garages }} />
         <div className="h-20">{documentToReactComponents(await richTextFromMarkdown(shortDescription))}</div>
         <div className="card-actions justify-end">
           <Link href={`/project/${slug}`} className="btn btn-primary grow">
