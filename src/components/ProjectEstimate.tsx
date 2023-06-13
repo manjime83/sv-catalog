@@ -34,7 +34,7 @@ export default function ProjectEstimate({
   const fees = Math.round(f);
 
   return (
-    <div className="flex flex-col md:flex-row w-full gap-4">
+    <div className="flex w-full flex-col gap-4 md:flex-row">
       <div className="flex-1">
         <div className="form-control w-full">
           <label className="label">
@@ -150,8 +150,8 @@ export default function ProjectEstimate({
           />
         </div>
       </div>
-      <div className="flex flex-col justify-evenly items-center gap-4">
-        <div className="stats shadow bg-primary-content max-w-fit">
+      <div className="flex flex-col items-center justify-evenly gap-4">
+        <div className="stats max-w-fit bg-primary-content shadow">
           <div className="stat text-center">
             <div className="stat-title">Pago mensual estimado</div>
             <div className="stat-value text-secondary">

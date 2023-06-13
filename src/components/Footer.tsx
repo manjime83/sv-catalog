@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="font-thin text-xs text-center py-2">
+    <footer className="py-2 text-center text-xs font-thin">
       © {new Date().getFullYear()}{" "}
       <a href="https://nimbusit.us" target="_blank">
         Nimbus IT

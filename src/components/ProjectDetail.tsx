@@ -73,7 +73,7 @@ export default async function ProjectDetail({
         <div className="prose max-w-none">{documentToReactComponents(await richTextFromMarkdown(description))}</div>
         <div className="flex items-center justify-center py-4">
           <div className="flex basis-2/5 flex-col items-center gap-y-6 text-lg">
-            <div className="flex flex-col md:flex-row gap-2 items-center">
+            <div className="flex flex-col items-center gap-2 md:flex-row">
               <div className="tooltip" data-tip="Valor aproximado">
                 <span className="font-semibold">HOA mensual</span>
               </div>
@@ -85,7 +85,7 @@ export default async function ProjectDetail({
                 })}
               </strong>
             </div>
-            <div className="flex flex-col md:flex-row gap-2 items-center">
+            <div className="flex flex-col items-center gap-2 md:flex-row">
               <div className="tooltip" data-tip="Valor aproximado">
                 <span className="font-semibold">CDD anual</span>
               </div>
@@ -97,7 +97,7 @@ export default async function ProjectDetail({
                 })}
               </strong>
             </div>
-            <div className="flex flex-col md:flex-row gap-2 items-center">
+            <div className="flex flex-col items-center gap-2 md:flex-row">
               <div className="tooltip" data-tip="Valor aproximado">
                 <span className="font-semibold">Impuesto</span>
               </div>
@@ -129,7 +129,7 @@ export default async function ProjectDetail({
           <h2 className="card-title h-10">Contáctame</h2>
           <Contactinfo project={name} />
         </div>
-        <div className="card-actions justify-end mt-4">
+        <div className="card-actions mt-4 justify-end">
           <Link href="/" className="btn-primary btn grow">
             Ver más propiedades
           </Link>

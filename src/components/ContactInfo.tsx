@@ -3,15 +3,15 @@ import Image from "next/image";
 
 export default function Contactinfo({ project }: { project: string }) {
   return (
-    <div className="flex flex-grow justify-center items-center gap-4">
-      <div className="flex flex-col justify-center items-center space-y-4 text-lg">
+    <div className="flex flex-grow items-center justify-center gap-4">
+      <div className="flex flex-col items-center justify-center space-y-4 text-lg">
         <div>
           <a
             href={`https://wa.me/+17869566199?text=${encodeURIComponent(
               "Hola Sandra, me gustaría saber más sobre la propiedad " + project
             )}`}
             target="_blank"
-            className="flex justify-center items-center gap-2"
+            className="flex items-center justify-center gap-2"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -30,32 +30,32 @@ export default function Contactinfo({ project }: { project: string }) {
           </a>
         </div>
         <div>
-          <a href="tel:+17869566199" className="flex justify-center items-center gap-2">
-            <PhoneCallIcon className="link link-primary" />
+          <a href="tel:+17869566199" className="flex items-center justify-center gap-2">
+            <PhoneCallIcon className="link-primary link" />
             <strong>+1 (786) 956-6199</strong>
           </a>
         </div>
         <div>
-          <a href="mailto:sandravargasrealtor@gmail.com" className="flex justify-center items-center gap-2">
-            <MailIcon className="link link-primary" />
+          <a href="mailto:sandravargasrealtor@gmail.com" className="flex items-center justify-center gap-2">
+            <MailIcon className="link-primary link" />
             <strong>sandravargasrealtor@gmail.com</strong>
           </a>
         </div>
         <div className="h-2"></div>
-        <div className="flex justify-center items-center gap-2 space-x-4">
-          <a className="link link-primary" href={`https://www.instagram.com/sandravargasrealtorfl`} target="_blank">
+        <div className="flex items-center justify-center gap-2 space-x-4">
+          <a className="link-primary link" href={`https://www.instagram.com/sandravargasrealtorfl`} target="_blank">
             <InstagramIcon />
           </a>
-          <a className="link link-primary" href={`https://www.facebook.com/sandravargasrealtor`} target="_blank">
+          <a className="link-primary link" href={`https://www.facebook.com/sandravargasrealtor`} target="_blank">
             <FacebookIcon />
           </a>
-          <a className="link link-primary" href={`https://www.youtube.com/@sandravargasrealtor`} target="_blank">
+          <a className="link-primary link" href={`https://www.youtube.com/@sandravargasrealtor`} target="_blank">
             <YoutubeIcon />
           </a>
         </div>
       </div>
       <div className="divider divider-horizontal hidden md:flex"></div>
-      <div className="md:flex md:justify-center md:items-center hidden">
+      <div className="hidden md:flex md:items-center md:justify-center">
         <Image src="/channels4_profile.jpg" alt="Sandra Vargas" className="rounded-full" width={200} height={200} />
       </div>
     </div>

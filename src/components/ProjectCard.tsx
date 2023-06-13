@@ -15,11 +15,11 @@ export default async function Project({
 
   return (
     <div className="card card-compact w-96 bg-base-100 shadow-xl">
-      <figure className="relative w-96 aspect-video object-cover">
+      <figure className="relative aspect-video w-96 object-cover">
         <Image src={`https:${images[0]!.fields.file!.url}`} alt={images[0]!.fields.title!} fill />
       </figure>
       <div className="card-body">
-        <div className="flex justify-between items-center">
+        <div className="flex items-center justify-between">
           <h2 className="card-title">{name}</h2>
           <p className="text-right text-lg">
             {priceFrom.toLocaleString("en-US", {
@@ -33,7 +33,7 @@ export default async function Project({
         <ProjectCharacteristics data={{ area, bedrooms, bathrooms, garages }} />
         <div className="h-20">{documentToReactComponents(await richTextFromMarkdown(shortDescription))}</div>
         <div className="card-actions justify-end">
-          <Link href={`/project/${slug}`} className="btn btn-primary grow">
+          <Link href={`/project/${slug}`} className="btn-primary btn grow">
             Ver detalle
           </Link>
         </div>

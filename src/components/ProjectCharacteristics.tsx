@@ -14,7 +14,7 @@ export default function ProjectCharacteristics({
     <div className="flex flex-nowrap justify-around p-2">
       <div className="min-w-30 flex items-center justify-center space-x-2">
         <HomeIcon className="text-secondary" />
-        <span className="font-bold whitespace-nowrap">
+        <span className="whitespace-nowrap font-bold">
           {area.toLocaleString("en-US", {
             maximumFractionDigits: 2,
           })}
@@ -26,15 +26,15 @@ export default function ProjectCharacteristics({
       </div>
       <div className="min-w-30 flex items-center justify-center space-x-2">
         <BedSingleIcon className="text-secondary" />
-        <span className="font-bold whitespace-nowrap">{bedrooms}</span>
+        <span className="whitespace-nowrap font-bold">{bedrooms}</span>
       </div>
       <div className="min-w-30 flex items-center justify-center space-x-2">
         <BathIcon className="text-secondary" />
-        <span className="font-bold whitespace-nowrap">{bathrooms}</span>
+        <span className="whitespace-nowrap font-bold">{bathrooms}</span>
       </div>
       <div className="min-w-30 flex items-center justify-center space-x-2">
         <CarIcon className="text-secondary" />
-        <span className="font-bold whitespace-nowrap">{garages}</span>
+        <span className="whitespace-nowrap font-bold">{garages}</span>
       </div>
     </div>
   );
