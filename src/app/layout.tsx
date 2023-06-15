@@ -4,8 +4,6 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const dynamic = "error";
-
 export const metadata = {
   title: "Sandra's Catalog",
   description: "Catalog of Sandra Vargas's properties in Orlando, Kissimmee, and Davenport",

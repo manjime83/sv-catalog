@@ -13,12 +13,13 @@ import YouTubeVideo from "./YouTubeVideo";
 
 export default async function ProjectDetail({
   data,
+  initialValues,
 }: {
   data: Entry<ProjectSkeleton, "WITHOUT_UNRESOLVABLE_LINKS", Locale>;
+  initialValues: { downPayment: number; interestRate: number };
 }) {
   const {
     name,
-    slug,
     images,
     description,
     priceFrom,
@@ -123,7 +124,7 @@ export default async function ProjectDetail({
         </div>
         <div>
           <h2 className="card-title h-8">Estima tu pago mensual</h2>
-          <ProjectEstimate price={priceFrom} taxRate={taxRate} fees={hoa + cdd / 12} />
+          <ProjectEstimate price={priceFrom} fees={hoa + cdd / 12} initialValues={{ ...initialValues, taxRate }} />
         </div>
         <div>
           <h2 className="card-title h-10">Contáctame</h2>

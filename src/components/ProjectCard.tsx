@@ -19,8 +19,8 @@ export default async function Project({
         <Image src={`https:${images[0]!.fields.file!.url}`} alt={images[0]!.fields.title!} fill />
       </figure>
       <div className="card-body">
-        <div className="flex items-center justify-between">
-          <h2 className="card-title">{name}</h2>
+        <div className="flex items-center justify-between gap-x-1 ">
+          <h2 className="text-xl font-semibold truncate">{name}</h2>
           <p className="text-right text-lg">
             {priceFrom.toLocaleString("en-US", {
               style: "currency",
