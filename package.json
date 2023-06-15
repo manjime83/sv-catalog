@@ -12,6 +12,7 @@
     "@contentful/rich-text-from-markdown": "^15.16.6",
     "@contentful/rich-text-react-renderer": "^15.16.5",
     "@react-google-maps/api": "^2.18.1",
+    "cheerio": "^1.0.0-rc.12",
     "contentful": "^10.2.3",
     "lucide-react": "^0.241.0",
     "next": "13.4.4",

@@ -1,8 +1,11 @@
 import ProjectDetail from "@/components/ProjectDetail";
 import client, { ProjectSkeleton } from "@/utils/contentful";
+import getMortgageRate from "@/utils/mortgageRates";
 import { notFound } from "next/navigation";
 
 export const dynamic = "force-static";
+
+const mortgageRate = getMortgageRate();
 
 export default async function Project({
   params,
@@ -23,7 +26,7 @@ export default async function Project({
 
   const project = projects.items[0];
   const downPayment = +(searchParams.dp ?? "3.5");
-  const interestRate = +(searchParams.ir ?? "6");
+  const interestRate = +(searchParams.ir ?? (await mortgageRate));
 
   return (
     <div className="flex flex-wrap justify-center items-center gap-4 my-12">
