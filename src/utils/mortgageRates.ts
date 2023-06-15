@@ -6,6 +6,5 @@ export default async function getMortgageRate() {
   const $ = cheerio.load(text);
   const value = $("div.price").first().text();
   const mortgageRate = +value.replace("%", "");
-  console.debug("🚀 ~ file: mortgageRates.ts:9 ~ getMortgageRate ~ mortgageRate:", mortgageRate);
   return mortgageRate;
 }
