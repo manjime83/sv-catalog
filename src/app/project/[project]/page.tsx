@@ -25,8 +25,8 @@ export default async function Project({
   }
 
   const project = projects.items[0];
-  const downPayment = +(searchParams.dp ?? "3.5");
-  const interestRate = +(searchParams.ir ?? (await mortgageRate));
+  const downPayment = Math.min(+(searchParams.dp ?? "3.5"), 50);
+  const interestRate = Math.min(+(searchParams.ir ?? (await mortgageRate)), 10);
 
   return (
     <div className="flex flex-wrap justify-center items-center gap-4 my-12">
