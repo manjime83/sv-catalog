@@ -179,7 +179,7 @@ export default function ProjectEstimate({
                     </td>
                   </tr>
                   <tr>
-                    <th>PMI ({pmiRate / 100}%)</th>
+                    <th>PMI {pmi > 0 ? `(${pmiRate / 100}%)` : ""}</th>
                     <td className="text-end">
                       {pmi.toLocaleString("en-US", {
                         style: "currency",
