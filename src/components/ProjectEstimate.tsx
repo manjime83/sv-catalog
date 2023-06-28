@@ -14,7 +14,7 @@ export default function ProjectEstimate({
   const [price, setPrice] = useState(p);
   const [downPayment, setDownPayment] = useState(initialValues.downPayment * 100);
   const [interestRate, setInterestRate] = useState(initialValues.interestRate * 100);
-  const [taxRate, setTaxRate] = useState(initialValues.taxRate * 100);
+  // const [taxRate, setTaxRate] = useState(initialValues.taxRate * 100);
   const [insuranceRate, setInsuranceRate] = useState(50);
 
   const loanPeriod = 30 * 12;
@@ -28,7 +28,7 @@ export default function ProjectEstimate({
 
   const pmiRate = (175 + (loanAmmount > 726200 ? (downPayment < 500 ? 75 : 70) : downPayment < 500 ? 55 : 50)) / 2.5;
   const pmi = Math.round(downPayment < 2000 ? ((pmiRate / 10000) * loanAmmount) / 12 : 0);
-  const taxes = Math.round((price * taxRate) / 10000 / 12);
+  // const taxes = Math.round((price * taxRate) / 10000 / 12);
   const insurance = Math.round((price * insuranceRate) / 10000 / 12);
   const fees = Math.round(f);
 
@@ -50,8 +50,8 @@ export default function ProjectEstimate({
             <input
               name="price"
               type="range"
-              min={Math.round((p * 0.9) / 1000) * 1000}
-              max={Math.round((p * 1.1) / 1000) * 1000}
+              min={100000}
+              max={1000000}
               step={1000}
               value={price}
               className="range range-secondary range-sm"
@@ -99,7 +99,7 @@ export default function ProjectEstimate({
               onChange={(e) => setInterestRate(parseInt(e.target.value))}
             />
           </div>
-          <div className="form-control w-full">
+          {/* <div className="form-control w-full">
             <label className="label">
               <span className="label-text">Impuesto a la propiedad</span>
               <div className="label-text-alt">
@@ -123,7 +123,7 @@ export default function ProjectEstimate({
               className="range range-secondary range-sm"
               onChange={(e) => setTaxRate(parseInt(e.target.value))}
             />
-          </div>
+          </div> */}
           <div className="form-control w-full">
             <label className="label">
               <span className="label-text">Seguro de la propiedad</span>
@@ -155,7 +155,7 @@ export default function ProjectEstimate({
             <div className="stat text-center">
               <div className="stat-title">Pago mensual estimado</div>
               <div className="stat-value text-secondary">
-                {(payment + pmi + taxes + insurance + fees).toLocaleString("en-US", {
+                {(payment + pmi + insurance + fees).toLocaleString("en-US", {
                   style: "currency",
                   currency: "USD",
                   maximumFractionDigits: 0,
@@ -188,7 +188,7 @@ export default function ProjectEstimate({
                       })}
                     </td>
                   </tr>
-                  <tr>
+                  {/* <tr>
                     <th>Impuestos</th>
                     <td className="text-end">
                       {taxes.toLocaleString("en-US", {
@@ -197,7 +197,7 @@ export default function ProjectEstimate({
                         maximumFractionDigits: 0,
                       })}
                     </td>
-                  </tr>
+                  </tr> */}
                   <tr>
                     <th>Seguros</th>
                     <td className="text-end">
