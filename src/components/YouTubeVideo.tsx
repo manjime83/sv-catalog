@@ -1,7 +1,7 @@
-export default function YouTubeVideo({ url: u }: { url: string }) {
-  const url = new URL(u);
-  const id = url.searchParams.get("v");
+import getYouTubeID from "get-youtube-id";
 
+export default function YouTubeVideo({ url }: { url: string }) {
+  const id = getYouTubeID(url);
   return (
     <iframe
       width="100%"

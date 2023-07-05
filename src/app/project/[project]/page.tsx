@@ -1,19 +1,10 @@
 import ProjectDetail from "@/components/ProjectDetail";
 import client, { ProjectSkeleton } from "@/utils/contentful";
-import getMortgageRate from "@/utils/mortgageRates";
 import { notFound } from "next/navigation";
 
 export const dynamic = "force-static";
 
-const mortgageRate = getMortgageRate();
-
-export default async function Project({
-  params,
-  searchParams,
-}: {
-  params: { project: string };
-  searchParams: { dp?: string; ir?: string };
-}) {
+export default async function Project({ params }: { params: { project: string } }) {
   const projects = await client.withoutUnresolvableLinks.getEntries<ProjectSkeleton>({
     content_type: "project",
     locale: "es-US",
@@ -25,12 +16,10 @@ export default async function Project({
   }
 
   const project = projects.items[0];
-  const downPayment = Math.min(+(searchParams.dp ?? "3.5"), 50);
-  const interestRate = Math.min(+(searchParams.ir ?? (await mortgageRate)), 10);
 
   return (
     <div className="flex flex-wrap justify-center items-center gap-4 my-12">
-      <ProjectDetail data={project} initialValues={{ downPayment, interestRate }} />
+      <ProjectDetail data={project} />
     </div>
   );
 }

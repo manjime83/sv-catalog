@@ -1,19 +1,25 @@
 "use client";
 
+import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 
 export default function ProjectEstimate({
   price: p,
   fees: f,
-  initialValues,
+  mortgageRate,
 }: {
   price: number;
   fees: number;
-  initialValues: { downPayment: number; interestRate: number; taxRate: number };
+  mortgageRate: number;
 }) {
+  const searchParams = useSearchParams();
+
+  const dp = Math.min(+(searchParams.get("dp") ?? "3.5"), 50);
+  const ir = Math.min(+(searchParams.get("ir") ?? mortgageRate), 10);
+
   const [price, setPrice] = useState(p);
-  const [downPayment, setDownPayment] = useState(initialValues.downPayment * 100);
-  const [interestRate, setInterestRate] = useState(initialValues.interestRate * 100);
+  const [downPayment, setDownPayment] = useState(dp * 100);
+  const [interestRate, setInterestRate] = useState(ir * 100);
   // const [taxRate, setTaxRate] = useState(initialValues.taxRate * 100);
   const [insuranceRate, setInsuranceRate] = useState(50);
 

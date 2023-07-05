@@ -1,4 +1,5 @@
 import { Locale, ProjectSkeleton } from "@/utils/contentful";
+import getMortgageRate from "@/utils/mortgageRates";
 import { richTextFromMarkdown } from "@contentful/rich-text-from-markdown";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Entry } from "contentful";
@@ -11,12 +12,12 @@ import ProjectLocation from "./ProjectLocation";
 import VirtualTour from "./VirtualTour";
 import YouTubeVideo from "./YouTubeVideo";
 
+const mortgageRate = getMortgageRate();
+
 export default async function ProjectDetail({
   data,
-  initialValues,
 }: {
   data: Entry<ProjectSkeleton, "WITHOUT_UNRESOLVABLE_LINKS", Locale>;
-  initialValues: { downPayment: number; interestRate: number };
 }) {
   const {
     name,
@@ -124,7 +125,7 @@ export default async function ProjectDetail({
         </div>
         <div>
           <h2 className="card-title h-8">Estima tu pago mensual</h2>
-          <ProjectEstimate price={priceFrom} fees={hoa + cdd / 12} initialValues={{ ...initialValues, taxRate }} />
+          <ProjectEstimate price={priceFrom} fees={hoa + cdd / 12} mortgageRate={await mortgageRate} />
         </div>
         <div>
           <h2 className="card-title h-10">Contáctame</h2>
