@@ -230,20 +230,24 @@ export default function ProjectEstimate({
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-center gap-4 mt-4">
-        <div className="max-w-md bg-primary-content shadow py-2 px-6 rounded-2xl">
-          <div className="text-center">
-            <span>Estimado de ingresos anuales del grupo familiar requeridos para la aprobación de un prestamo: </span>
-            <strong className="text-secondary">
-              {(Math.floor(((payment + fees) * 3 * 12) / 1000) * 1000).toLocaleString("en-US", {
-                style: "currency",
-                currency: "USD",
-                maximumFractionDigits: 0,
-              })}
-            </strong>
+      {downPayment < 3000 && (
+        <div className="flex items-center justify-center gap-4 mt-4">
+          <div className="max-w-md bg-primary-content shadow py-2 px-6 rounded-2xl">
+            <div className="text-center">
+              <span>
+                Estimado de ingresos anuales del grupo familiar requeridos para la aprobación de un prestamo:{" "}
+              </span>
+              <strong className="text-secondary">
+                {(Math.floor(((payment + fees) * 3 * 12) / 1000) * 1000).toLocaleString("en-US", {
+                  style: "currency",
+                  currency: "USD",
+                  maximumFractionDigits: 0,
+                })}
+              </strong>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </>
   );
 }

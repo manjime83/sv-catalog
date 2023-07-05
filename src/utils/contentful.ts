@@ -23,6 +23,7 @@ export type ProjectSkeleton = {
   fields: {
     name: EntryFieldTypes.Text;
     slug: EntryFieldTypes.Text;
+    city: EntryFieldTypes.Text;
     images: EntryFieldTypes.Array<EntryFieldTypes.AssetLink>;
     shortDescription: EntryFieldTypes.Text;
     description: EntryFieldTypes.Text;

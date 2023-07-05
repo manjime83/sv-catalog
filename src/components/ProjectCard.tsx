@@ -11,7 +11,7 @@ export default async function Project({
 }: {
   data: Entry<ProjectSkeleton, "WITHOUT_UNRESOLVABLE_LINKS", Locale>;
 }) {
-  const { name, slug, images, shortDescription, priceFrom, area, bedrooms, bathrooms, garages } = data.fields;
+  const { name, slug, city, images, shortDescription, priceFrom, area, bedrooms, bathrooms, garages } = data.fields;
 
   return (
     <div className="card card-compact w-96 bg-base-100 shadow-xl">
@@ -19,8 +19,11 @@ export default async function Project({
         <Image src={`https:${images[0]!.fields.file!.url}`} alt={images[0]!.fields.title!} fill />
       </figure>
       <div className="card-body">
-        <div className="flex items-center justify-between gap-x-1 ">
-          <h2 className="text-xl font-semibold truncate">{name}</h2>
+        <div className="flex items-center justify-between gap-x-1">
+          <div className="flex flex-col w-64">
+            <h2 className="text-xl font-semibold truncate">{name}</h2>
+            <p>{city}</p>
+          </div>
           <p className="text-right text-lg">
             {priceFrom.toLocaleString("en-US", {
               style: "currency",

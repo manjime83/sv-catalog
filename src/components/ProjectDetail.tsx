@@ -21,6 +21,7 @@ export default async function ProjectDetail({
 }) {
   const {
     name,
+    city,
     images,
     description,
     priceFrom,
@@ -40,7 +41,10 @@ export default async function ProjectDetail({
     <div className="card card-compact w-full max-w-screen-md bg-base-100 shadow-xl">
       <div className="card-body">
         <div className="flex items-center justify-between">
-          <h1 className="text-3xl font-bold">{name}</h1>
+          <div className="flex flex-col">
+            <h1 className="text-3xl font-semibold truncate">{name}</h1>
+            <p>{city}</p>
+          </div>
           <div
             className="tooltip"
             data-tip="Los precios y las características pueden variar y están sujetos a cambios."
@@ -112,16 +116,23 @@ export default async function ProjectDetail({
             </div>
           </div>
           <div className="basis-3/5">
-            <ProjectLocation location={location} />
+            <h2 className="card-title h-8">Ubicación</h2>
+            <div className="border border-1 rounded p-1">
+              <ProjectLocation location={location} />
+            </div>
           </div>
         </div>
         <div>
           <h2 className="card-title h-8">Video de la propiedad</h2>
-          <YouTubeVideo url={youTubeVideo} />
+          <div className="border border-1 rounded p-1">
+            <YouTubeVideo url={youTubeVideo} />
+          </div>
         </div>
         <div>
           <h2 className="card-title h-8">Tour virtual</h2>
-          <VirtualTour url={virtualTour} />
+          <div className="border border-1 rounded p-1">
+            <VirtualTour url={virtualTour} />
+          </div>
         </div>
         <div>
           <h2 className="card-title h-8">Estima tu pago mensual</h2>
