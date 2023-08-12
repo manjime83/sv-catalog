@@ -136,7 +136,12 @@ export default async function ProjectDetail({
         </div>
         <div>
           <h2 className="card-title h-8">Estima tu pago mensual</h2>
-          <ProjectEstimate price={priceFrom} fees={hoa + cdd / 12} mortgageRate={await mortgageRate} />
+          <ProjectEstimate
+            price={priceFrom}
+            fees={hoa + cdd / 12}
+            taxRate={taxRate}
+            mortgageRate={await mortgageRate}
+          />
         </div>
         <div>
           <h2 className="card-title h-10">Contáctame</h2>
