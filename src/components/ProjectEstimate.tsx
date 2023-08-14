@@ -7,11 +7,13 @@ export default function ProjectEstimate({
   price: p,
   fees: f,
   taxRate: t,
+  insuranceRate: i,
   mortgageRate,
 }: {
   price: number;
   fees: number;
   taxRate: number;
+  insuranceRate: number;
   mortgageRate: number;
 }) {
   const searchParams = useSearchParams();
@@ -23,7 +25,7 @@ export default function ProjectEstimate({
   const [downPayment, setDownPayment] = useState(dp * 100);
   const [interestRate, setInterestRate] = useState(ir * 100);
   const [taxRate, setTaxRate] = useState(t * 100);
-  const [insuranceRate, setInsuranceRate] = useState(50);
+  const [insuranceRate, setInsuranceRate] = useState(i * 100);
 
   const loanPeriod = 30 * 12;
   const loanAmmount = Math.round(price * (1 - downPayment / 10000));

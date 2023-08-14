@@ -38,6 +38,7 @@ export type ProjectSkeleton = {
     hoa: EntryFieldTypes.Integer;
     cdd: EntryFieldTypes.Integer;
     taxRate: EntryFieldTypes.Number;
+    insuranceRate: EntryFieldTypes.Number;
   };
 };
 

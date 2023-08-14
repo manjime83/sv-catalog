@@ -32,6 +32,7 @@ export default async function ProjectDetail({
     hoa,
     cdd,
     taxRate,
+    insuranceRate,
     location,
     youTubeVideo,
     virtualTour,
@@ -140,6 +141,7 @@ export default async function ProjectDetail({
             price={priceFrom}
             fees={hoa + cdd / 12}
             taxRate={taxRate}
+            insuranceRate={insuranceRate}
             mortgageRate={await mortgageRate}
           />
         </div>
