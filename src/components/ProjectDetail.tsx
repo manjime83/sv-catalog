@@ -92,7 +92,7 @@ export default async function ProjectDetail({
                 })}
               </strong>
             </div>
-            <div className="flex flex-col items-center gap-2 md:flex-row">
+            {/* <div className="flex flex-col items-center gap-2 md:flex-row">
               <div className="tooltip" data-tip="Valor aproximado">
                 <span className="font-semibold">CDD anual</span>
               </div>
@@ -103,7 +103,7 @@ export default async function ProjectDetail({
                   maximumFractionDigits: 0,
                 })}
               </strong>
-            </div>
+            </div> */}
             <div className="flex flex-col items-center gap-2 md:flex-row">
               <div className="tooltip" data-tip="Valor aproximado">
                 <span className="font-semibold">Impuesto</span>
