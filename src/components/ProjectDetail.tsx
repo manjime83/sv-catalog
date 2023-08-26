@@ -123,18 +123,22 @@ export default async function ProjectDetail({
             </div>
           </div>
         </div>
-        <div>
-          <h2 className="card-title h-8">Video de la propiedad</h2>
-          <div className="border border-1 rounded p-1">
-            <YouTubeVideo url={youTubeVideo} />
+        {youTubeVideo && (
+          <div>
+            <h2 className="card-title h-8">Video de la propiedad</h2>
+            <div className="border border-1 rounded p-1">
+              <YouTubeVideo url={youTubeVideo} />
+            </div>
           </div>
-        </div>
-        <div>
-          <h2 className="card-title h-8">Tour virtual</h2>
-          <div className="border border-1 rounded p-1">
-            <VirtualTour url={virtualTour} />
+        )}
+        {virtualTour && (
+          <div>
+            <h2 className="card-title h-8">Tour virtual</h2>
+            <div className="border border-1 rounded p-1">
+              <VirtualTour url={virtualTour} />
+            </div>
           </div>
-        </div>
+        )}
         <div>
           <h2 className="card-title h-8">Estima tu pago mensual</h2>
           <ProjectEstimate
