@@ -56,7 +56,7 @@ export default function Contactinfo({ project }: { project: string }) {
       </div>
       <div className="divider divider-horizontal hidden md:flex"></div>
       <div className="hidden md:flex md:items-center md:justify-center">
-        <Image src="/channels4_profile.jpg" alt="Sandra Vargas" className="rounded-full" width={200} height={200} />
+        <Image src="/sv.png" alt="Sandra Vargas" className="rounded-full" width={200} height={200} />
       </div>
     </div>
   );
