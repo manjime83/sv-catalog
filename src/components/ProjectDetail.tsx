@@ -7,7 +7,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Contactinfo from "./ContactInfo";
 import ProjectCharacteristics from "./ProjectCharacteristics";
-import ProjectEstimate from "./ProjectEstimate";
 import ProjectLocation from "./ProjectLocation";
 import VirtualTour from "./VirtualTour";
 import YouTubeVideo from "./YouTubeVideo";
@@ -139,7 +138,7 @@ export default async function ProjectDetail({
             </div>
           </div>
         )}
-        <div>
+        {/* <div>
           <h2 className="card-title h-8">Estima tu pago mensual</h2>
           <ProjectEstimate
             price={priceFrom}
@@ -148,7 +147,7 @@ export default async function ProjectDetail({
             insuranceRate={insuranceRate}
             mortgageRate={await mortgageRate}
           />
-        </div>
+        </div> */}
         <div>
           <h2 className="card-title h-10">Contáctame</h2>
           <Contactinfo project={name} />
