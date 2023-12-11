@@ -40,23 +40,23 @@ export default async function ProjectDetail({
   return (
     <div className="card card-compact w-full max-w-screen-md bg-base-100 shadow-xl">
       <div className="card-body">
-        <div className="flex items-center justify-between">
-          <div className="flex flex-col">
-            <h1 className="text-3xl font-semibold truncate">{name}</h1>
-            <p>{city}</p>
-          </div>
-          <div
-            className="tooltip"
-            data-tip="Los precios y las características pueden variar y están sujetos a cambios."
-          >
-            <p className="text-right text-lg">
-              {priceFrom.toLocaleString("en-US", {
-                style: "currency",
-                currency: "USD",
-                maximumFractionDigits: 0,
-              })}
-              +
-            </p>
+        <div className="flex flex-col items-center justify-between">
+          <h1 className="md:text-3xl text-left w-full text-xl font-semibold truncate">{name}</h1>
+          <div className="flex flex-col w-full mx-2">
+            <div className="flex items-center justify-between">
+              <p>{city}</p>
+              <p
+                className="tooltip text-right text-lg"
+                data-tip="Los precios y las características pueden variar y están sujetos a cambios."
+              >
+                {priceFrom.toLocaleString("en-US", {
+                  style: "currency",
+                  currency: "USD",
+                  maximumFractionDigits: 0,
+                })}
+                +
+              </p>
+            </div>
           </div>
         </div>
         <div className="divider my-0"></div>
