@@ -44,12 +44,12 @@ export default function ProjectEstimate({
 
   return (
     <>
-      <div className="flex w-full flex-col gap-4 md:flex-row">
+      <div className="flex flex-col w-full gap-4 md:flex-row">
         <div className="flex-1">
-          <div className="form-control w-full">
+          <div className="w-full form-control">
             <label className="label">
               <span className="label-text">Precio de la propiedad</span>
-              <span className="label-text-alt font-bold">
+              <span className="font-bold label-text-alt">
                 {price.toLocaleString("en-US", {
                   style: "currency",
                   currency: "USD",
@@ -68,7 +68,7 @@ export default function ProjectEstimate({
               onChange={(e) => setPrice(parseInt(e.target.value))}
             />
           </div>
-          <div className="form-control w-full">
+          <div className="w-full form-control">
             <label className="label">
               <span className="label-text">Cuota inicial</span>
               <div className="label-text-alt">
@@ -93,10 +93,10 @@ export default function ProjectEstimate({
               onChange={(e) => setDownPayment(parseInt(e.target.value))}
             />
           </div>
-          <div className="form-control w-full">
+          <div className="w-full form-control">
             <label className="label">
               <span className="label-text">Tasa de interes</span>
-              <span className="label-text-alt font-bold">{interestRate / 100}%</span>
+              <span className="font-bold label-text-alt">{interestRate / 100}%</span>
             </label>
             <input
               name="interestRate"
@@ -109,7 +109,7 @@ export default function ProjectEstimate({
               onChange={(e) => setInterestRate(parseInt(e.target.value))}
             />
           </div>
-          <div className="form-control w-full">
+          <div className="w-full form-control">
             <label className="label">
               <span className="label-text">Impuesto a la propiedad</span>
               <div className="label-text-alt">
@@ -134,7 +134,7 @@ export default function ProjectEstimate({
               onChange={(e) => setTaxRate(parseInt(e.target.value))}
             />
           </div>
-          <div className="form-control w-full">
+          <div className="w-full form-control">
             <label className="label">
               <span className="label-text">Seguro de la propiedad</span>
               <div className="label-text-alt">
@@ -160,9 +160,9 @@ export default function ProjectEstimate({
             />
           </div>
         </div>
-        <div className="flex flex-col items-center justify-evenly gap-4">
-          <div className="stats max-w-fit bg-primary-content shadow">
-            <div className="stat text-center">
+        <div className="flex flex-col items-center gap-4 justify-evenly">
+          <div className="shadow stats max-w-fit bg-secondary-content">
+            <div className="text-center stat">
               <div className="stat-title">Pago mensual estimado</div>
               <div className="stat-value text-secondary">
                 {(payment + pmi + insurance + taxes + fees).toLocaleString("en-US", {
@@ -176,7 +176,7 @@ export default function ProjectEstimate({
           <div className="flex flex-col items-center justify-center">
             <h3 className="mb-2 font-bold">Detalles del pago</h3>
             <div>
-              <table className="table-xs table">
+              <table className="table table-xs">
                 <tbody>
                   <tr>
                     <th>Cuota</th>
@@ -236,7 +236,7 @@ export default function ProjectEstimate({
       </div>
       {downPayment < 3000 && (
         <div className="flex items-center justify-center gap-4 mt-4">
-          <div className="max-w-md bg-primary-content shadow py-2 px-6 rounded-2xl">
+          <div className="max-w-md px-6 py-2 shadow bg-secondary-content rounded-2xl">
             <div className="text-center">
               <span>
                 Estimado de ingresos anuales del grupo familiar requeridos para la aprobación de un prestamo:{" "}

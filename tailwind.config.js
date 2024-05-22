@@ -10,7 +10,7 @@ module.exports = {
     themes: [
       {
         light: {
-          ...require("daisyui/src/theming/themes")["[data-theme=light]"],
+          ...require("daisyui/src/theming/themes")["light"],
           primary: "#34d399",
           ".btn-primary": {
             color: "#1c1e27",

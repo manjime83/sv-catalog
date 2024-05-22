@@ -34,6 +34,5 @@ export async function generateStaticParams() {
   const staticParams = entries.items.map((item) => ({
     category: item.fields.slug,
   }));
-  // console.log(staticParams);
   return staticParams;
 }

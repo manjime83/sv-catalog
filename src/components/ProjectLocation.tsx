@@ -4,7 +4,7 @@ import { Circle, GoogleMap, LoadScriptNext } from "@react-google-maps/api";
 
 export default function ProjectLocation({ location }: { location: { lat: number; lon: number } }) {
   return (
-    <LoadScriptNext googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}>
+    <LoadScriptNext googleMapsApiKey={`${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}&loading=async`}>
       <GoogleMap
         mapContainerStyle={{
           height: "250px",
