@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Contactinfo from "./ContactInfo";
 import ProjectCharacteristics from "./ProjectCharacteristics";
+import ProjectEstimate from "./ProjectEstimate";
 import ProjectLocation from "./ProjectLocation";
 import VirtualTour from "./VirtualTour";
 import YouTubeVideo from "./YouTubeVideo";
@@ -38,15 +39,15 @@ export default async function ProjectDetail({
   } = data.fields;
 
   return (
-    <div className="card card-compact w-full max-w-screen-md bg-base-100 shadow-xl">
+    <div className="w-full max-w-screen-md shadow-xl card card-compact bg-base-100">
       <div className="card-body">
         <div className="flex flex-col items-center justify-between">
-          <h1 className="md:text-3xl text-left w-full text-xl font-semibold truncate">{name}</h1>
+          <h1 className="w-full text-xl font-semibold text-left truncate md:text-3xl">{name}</h1>
           <div className="flex flex-col w-full mx-2">
             <div className="flex items-center justify-between">
               <p>{city}</p>
               <p
-                className="tooltip text-right text-lg"
+                className="text-lg text-right tooltip"
                 data-tip="Los precios y las características pueden variar y están sujetos a cambios."
               >
                 {priceFrom.toLocaleString("en-US", {
@@ -59,14 +60,14 @@ export default async function ProjectDetail({
             </div>
           </div>
         </div>
-        <div className="divider my-0"></div>
+        <div className="my-0 divider"></div>
         <div className="flex flex-wrap items-center justify-center gap-4">
           {images.map((image) => (
             <div className="" key={image!.sys.id}>
               <Image
                 src={`https:${image!.fields.file!.url}`}
                 alt={image!.fields.title!}
-                className="rounded-box aspect-video object-cover"
+                className="object-cover rounded-box aspect-video"
                 width={352}
                 height={198}
               />
@@ -78,7 +79,7 @@ export default async function ProjectDetail({
         </div>
         <div className="prose max-w-none">{documentToReactComponents(await richTextFromMarkdown(description))}</div>
         <div className="flex items-center justify-center py-4">
-          <div className="flex basis-2/5 flex-col items-center gap-y-6 text-lg">
+          <div className="flex flex-col items-center text-lg basis-2/5 gap-y-6">
             <div className="flex flex-col items-center gap-2 md:flex-row">
               <div className="tooltip" data-tip="Valor aproximado">
                 <span className="font-semibold">HOA mensual</span>
@@ -116,30 +117,30 @@ export default async function ProjectDetail({
             </div>
           </div>
           <div className="basis-3/5">
-            <h2 className="card-title h-8">Ubicación</h2>
-            <div className="border border-1 rounded p-1">
+            <h2 className="h-8 card-title">Ubicación</h2>
+            <div className="p-1 border rounded border-1">
               <ProjectLocation location={location} />
             </div>
           </div>
         </div>
         {youTubeVideo && (
           <div>
-            <h2 className="card-title h-8">Video de la propiedad</h2>
-            <div className="border border-1 rounded p-1">
+            <h2 className="h-8 card-title">Video de la propiedad</h2>
+            <div className="p-1 border rounded border-1">
               <YouTubeVideo url={youTubeVideo} />
             </div>
           </div>
         )}
         {virtualTour && (
           <div>
-            <h2 className="card-title h-8">Tour virtual</h2>
-            <div className="border border-1 rounded p-1">
+            <h2 className="h-8 card-title">Tour virtual</h2>
+            <div className="p-1 border rounded border-1">
               <VirtualTour url={virtualTour} />
             </div>
           </div>
         )}
-        {/* <div>
-          <h2 className="card-title h-8">Estima tu pago mensual</h2>
+        <div>
+          <h2 className="h-8 card-title">Estima tu pago mensual</h2>
           <ProjectEstimate
             price={priceFrom}
             fees={hoa + cdd / 12}
@@ -147,12 +148,12 @@ export default async function ProjectDetail({
             insuranceRate={insuranceRate}
             mortgageRate={await mortgageRate}
           />
-        </div> */}
+        </div>
         <div>
-          <h2 className="card-title h-10">Contáctame</h2>
+          <h2 className="h-10 card-title">Contáctame</h2>
           <Contactinfo project={name} />
         </div>
-        <div className="card-actions mt-4 justify-end">
+        <div className="justify-end mt-4 card-actions">
           <Link href="/" className="btn-primary btn grow">
             Ver más propiedades
           </Link>

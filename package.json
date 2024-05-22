@@ -9,28 +9,28 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@contentful/rich-text-from-markdown": "^15.16.8",
-    "@contentful/rich-text-react-renderer": "^15.19.0",
-    "@react-google-maps/api": "^2.19.2",
+    "@contentful/rich-text-from-markdown": "^15.16.15",
+    "@contentful/rich-text-react-renderer": "^15.19.6",
+    "@react-google-maps/api": "^2.19.3",
     "cheerio": "^1.0.0-rc.12",
-    "contentful": "^10.6.5",
+    "contentful": "^10.11.1",
     "get-youtube-id": "^1.0.1",
     "lucide-react": "^0.291.0",
-    "next": "^14.0.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "next": "^14.2.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.10",
-    "@types/node": "^20.8.10",
-    "@types/react": "^18.2.34",
-    "@types/react-dom": "^18.2.14",
-    "autoprefixer": "^10.4.16",
+    "@tailwindcss/typography": "^0.5.13",
+    "@types/node": "^20.12.12",
+    "@types/react": "^18.3.2",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.19",
     "daisyui": "^3.9.4",
-    "eslint": "^8.52.0",
-    "eslint-config-next": "^14.0.1",
-    "postcss": "^8.4.31",
-    "tailwindcss": "^3.3.5",
-    "typescript": "^5.2.2"
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.3",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5"
   }
 }

@@ -2,6 +2,8 @@ import ProjectCard from "@/components/ProjectCard";
 import client, { CategorySkeleton } from "@/utils/contentful";
 import { notFound } from "next/navigation";
 
+// export const dynamicParams = false;
+
 export default async function Category({ params }: { params: { category: string } }) {
   const categories = await client.withoutUnresolvableLinks.getEntries<CategorySkeleton>({
     content_type: "category",
@@ -16,7 +18,7 @@ export default async function Category({ params }: { params: { category: string 
   const category = categories.items[0];
 
   return (
-    <div className="flex flex-wrap justify-center items-center gap-4 my-12">
+    <div className="flex flex-wrap items-center justify-center gap-4 my-12">
       {category.fields.projects.map((project) => (
         <ProjectCard key={project!.sys.id} data={project!} />
       ))}
@@ -32,5 +34,6 @@ export async function generateStaticParams() {
   const staticParams = entries.items.map((item) => ({
     category: item.fields.slug,
   }));
+  // console.log(staticParams);
   return staticParams;
 }
