@@ -234,7 +234,7 @@ export default function ProjectEstimate({
           </div>
         </div>
       </div>
-      {downPayment < 3000 && (
+      {downPayment < 2000 && (
         <div className="flex items-center justify-center gap-4 mt-4">
           <div className="max-w-md px-6 py-2 shadow bg-secondary-content rounded-2xl">
             <div className="text-center">
