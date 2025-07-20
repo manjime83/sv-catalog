@@ -18,7 +18,7 @@ export default function ProjectEstimate({
 }) {
   const searchParams = useSearchParams();
 
-  const dp = Math.min(+(searchParams.get("dp") ?? "3.5"), 50);
+  const dp = Math.min(+(searchParams.get("dp") ?? "3.5"), 80);
   const ir = Math.min(+(searchParams.get("ir") ?? mortgageRate), 10);
 
   const [price, setPrice] = useState(p);
@@ -86,7 +86,7 @@ export default function ProjectEstimate({
               name="downPayment"
               type="range"
               min={0}
-              max={5000}
+              max={8000}
               step={50}
               value={downPayment}
               className="range range-secondary range-sm"
