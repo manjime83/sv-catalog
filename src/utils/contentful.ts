@@ -22,7 +22,7 @@ export type ProjectSkeleton = {
   contentTypeId: "project";
   fields: {
     name: EntryFieldTypes.Text;
-    slug: EntryFieldTypes.Text;
+    slug: EntryFieldTypes.Text; 
     city: EntryFieldTypes.Text;
     images: EntryFieldTypes.Array<EntryFieldTypes.AssetLink>;
     shortDescription: EntryFieldTypes.Text;
@@ -39,6 +39,7 @@ export type ProjectSkeleton = {
     cdd: EntryFieldTypes.Integer;
     taxRate: EntryFieldTypes.Number;
     insuranceRate: EntryFieldTypes.Number;
+    disableCalculator: EntryFieldTypes.Boolean;
   };
 };
 

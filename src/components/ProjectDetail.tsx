@@ -12,8 +12,6 @@ import ProjectLocation from "./ProjectLocation";
 import VirtualTour from "./VirtualTour";
 import YouTubeVideo from "./YouTubeVideo";
 
-const mortgageRate = getMortgageRate();
-
 export default async function ProjectDetail({
   data,
 }: {
@@ -36,18 +34,21 @@ export default async function ProjectDetail({
     location,
     youTubeVideo,
     virtualTour,
+    disableCalculator,
   } = data.fields;
 
+  const mortgageRate = getMortgageRate();
+
   return (
-    <div className="w-full max-w-screen-md shadow-xl card card-compact bg-base-100">
+    <div className="card card-compact w-full max-w-screen-md bg-base-100 shadow-xl">
       <div className="card-body">
         <div className="flex flex-col items-center justify-between">
-          <h1 className="w-full text-xl font-semibold text-left truncate md:text-3xl">{name}</h1>
-          <div className="flex flex-col w-full mx-2">
+          <h1 className="w-full truncate text-left text-xl font-semibold md:text-3xl">{name}</h1>
+          <div className="mx-2 flex w-full flex-col">
             <div className="flex items-center justify-between">
               <p>{city}</p>
               <p
-                className="text-lg text-right tooltip"
+                className="tooltip text-right text-lg"
                 data-tip="Los precios y las características pueden variar y están sujetos a cambios."
               >
                 {priceFrom.toLocaleString("en-US", {
@@ -60,26 +61,26 @@ export default async function ProjectDetail({
             </div>
           </div>
         </div>
-        <div className="my-0 divider"></div>
+        <div className="divider my-0"></div>
         <div className="flex flex-wrap items-center justify-center gap-4">
           {images.map((image) => (
             <div className="" key={image!.sys.id}>
               <Image
                 src={`https:${image!.fields.file!.url}`}
                 alt={image!.fields.title!}
-                className="object-cover rounded-box aspect-video"
+                className="aspect-video rounded-box object-cover"
                 width={352}
                 height={198}
               />
             </div>
           ))}
         </div>
-        <div className=" md:mx-20">
+        <div className="md:mx-20">
           <ProjectCharacteristics data={{ area, bedrooms, bathrooms, garages }} />
         </div>
         <div className="prose max-w-none">{documentToReactComponents(await richTextFromMarkdown(description))}</div>
         <div className="flex items-center justify-center py-4">
-          <div className="flex flex-col items-center text-lg basis-2/5 gap-y-6">
+          <div className="flex basis-2/5 flex-col items-center gap-y-6 text-lg">
             <div className="flex flex-col items-center gap-2 md:flex-row">
               <div className="tooltip" data-tip="Valor aproximado">
                 <span className="font-semibold">HOA mensual</span>
@@ -117,43 +118,45 @@ export default async function ProjectDetail({
             </div>
           </div>
           <div className="basis-3/5">
-            <h2 className="h-8 card-title">Ubicación</h2>
-            <div className="p-1 border rounded border-1">
+            <h2 className="card-title h-8">Ubicación</h2>
+            <div className="border-1 rounded border p-1">
               <ProjectLocation location={location} />
             </div>
           </div>
         </div>
         {youTubeVideo && (
           <div>
-            <h2 className="h-8 card-title">Video de la propiedad</h2>
-            <div className="p-1 border rounded border-1">
+            <h2 className="card-title h-8">Video de la propiedad</h2>
+            <div className="border-1 rounded border p-1">
               <YouTubeVideo url={youTubeVideo} />
             </div>
           </div>
         )}
         {virtualTour && (
           <div>
-            <h2 className="h-8 card-title">Tour virtual</h2>
-            <div className="p-1 border rounded border-1">
+            <h2 className="card-title h-8">Tour virtual</h2>
+            <div className="border-1 rounded border p-1">
               <VirtualTour url={virtualTour} />
             </div>
           </div>
         )}
+        {!disableCalculator && (
+          <div>
+            <h2 className="card-title h-8">Estima tu pago mensual</h2>
+            <ProjectEstimate
+              price={priceFrom}
+              fees={hoa + cdd / 12}
+              taxRate={taxRate}
+              insuranceRate={insuranceRate}
+              mortgageRate={await mortgageRate}
+            />
+          </div>
+        )}
         <div>
-          <h2 className="h-8 card-title">Estima tu pago mensual</h2>
-          <ProjectEstimate
-            price={priceFrom}
-            fees={hoa + cdd / 12}
-            taxRate={taxRate}
-            insuranceRate={insuranceRate}
-            mortgageRate={await mortgageRate}
-          />
-        </div>
-        <div>
-          <h2 className="h-10 card-title">Contáctame</h2>
+          <h2 className="card-title h-10">Contáctame</h2>
           <Contactinfo project={name} />
         </div>
-        <div className="justify-end mt-4 card-actions">
+        <div className="card-actions mt-4 justify-end">
           <Link href="/" className="btn-primary btn grow">
             Ver más propiedades
           </Link>

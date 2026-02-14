@@ -1,5 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from 'next'
+ 
+const nextConfig: NextConfig = {
   images: {
     remotePatterns: [{ protocol: "https", hostname: "images.ctfassets.net" }],
     unoptimized: true,
@@ -7,4 +8,4 @@ const nextConfig = {
   output: "export",
 };
 
-module.exports = nextConfig;
+export default nextConfig;
