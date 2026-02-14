@@ -34,7 +34,7 @@ export default async function ProjectDetail({
     location,
     youTubeVideo,
     virtualTour,
-    disableCalculator,
+    showCalculator,
   } = data.fields;
 
   const mortgageRate = getMortgageRate();
@@ -140,7 +140,7 @@ export default async function ProjectDetail({
             </div>
           </div>
         )}
-        {!disableCalculator && (
+        {showCalculator && (
           <div>
             <h2 className="card-title h-8">Estima tu pago mensual</h2>
             <ProjectEstimate

@@ -39,7 +39,7 @@ export type ProjectSkeleton = {
     cdd: EntryFieldTypes.Integer;
     taxRate: EntryFieldTypes.Number;
     insuranceRate: EntryFieldTypes.Number;
-    disableCalculator: EntryFieldTypes.Boolean;
+    showCalculator: EntryFieldTypes.Boolean;
   };
 };
 
